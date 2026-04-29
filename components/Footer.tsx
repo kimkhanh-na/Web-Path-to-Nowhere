@@ -84,12 +84,12 @@ export default function Footer() {
         <div>
           <FooterLogo>LeKimKhanh</FooterLogo>
           <Socials>
-            <SocialBtn href="#" title="Facebook">
+            <SocialBtn href="https://www.facebook.com/Pathtonowhere.en?locale=vi_VN" title="Facebook">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--text-muted)">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
               </svg>
             </SocialBtn>
-            <SocialBtn href="#" title="YouTube">
+            <SocialBtn href="https://www.youtube.com/@pathtonowhere" title="YouTube">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--text-muted)">
                 <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
                 <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0a0806"/>
@@ -108,15 +108,15 @@ export default function Footer() {
         <div>
           <ColTitle>About Me</ColTitle>
           <ColLink href="#">Facebook: Chezzyna Feodora</ColLink>
-          <ColLink href="#">Github: kimkhanh-na</ColLink>
+          <ColLink href="https://github.com/kimkhanh-na">Github: kimkhanh-na</ColLink>
           <ColLink href="#">Zalo: 0336......</ColLink>
         </div>
 
         <div>
           <ColTitle>About Game</ColTitle>
-          <ColLink href="#">X: @PathtoNowhereEN</ColLink>
-          <ColLink href="#">Facebook: Path to Nowhere</ColLink>
-          <ColLink href="#">Youtube: @pathtonowhere</ColLink>
+          <ColLink href="https://x.com/PathtoNowhereEN">X: @PathtoNowhereEN</ColLink>
+          <ColLink href="https://www.facebook.com/Pathtonowhere.en?locale=vi_VN">Facebook: Path to Nowhere</ColLink>
+          <ColLink href="https://www.youtube.com/@pathtonowhere">Youtube: @pathtonowhere</ColLink>
         </div>
       </FooterInner>
 

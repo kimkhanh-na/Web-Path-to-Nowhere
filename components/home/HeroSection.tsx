@@ -1,6 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -46,19 +47,35 @@ const Banner = styled.div`
   border: 1px solid var(--border);
   margin-top: 1rem;
   background: var(--bg-card);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const BannerImg = styled.div`
+  position: relative;
   min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  overflow: hidden;
 `
 
 const Placeholder = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 3rem;
+  padding: 2rem 1.5rem;
   text-align: center;
+  border-left: 1px solid var(--border);
+  
+  @media (max-width: 600px) {
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
 `
 
 const Tag = styled.div`
@@ -95,11 +112,24 @@ export default function HeroSection() {
   return (
     <Section>
       <Title>3.5 Year Anniversary</Title>
-      <Desc>Chief, a mysterious silhouette has been detected from Eastia… 
+      <Desc>
+        Chief, a mysterious silhouette has been detected from Eastia… 
         It appears to be a swordsman with a raised blade. Could this be a challenge?
-        MBCC is already tracking the signal. Awaiting your arrival to uncover the truth.</Desc>
-      <Btn href="/">Coming Soon!</Btn>
+        MBCC is already tracking the signal. Awaiting your arrival to uncover the truth.
+      </Desc>
+      <Btn href="#">Coming Soon!</Btn>
       <Banner>
+        <BannerImg>
+          <Image
+            src="/image/Intro.png"
+            alt="3.5 Year Anniversary"
+            fill
+            sizes='(max-width: 600px) 100vw, 50vw'
+            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            priority
+          />
+        </BannerImg>
+	       
         <Placeholder>
           <Tag>Path to Nowhere</Tag>
           <BannerTitle>
