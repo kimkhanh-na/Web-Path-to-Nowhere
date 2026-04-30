@@ -23,14 +23,29 @@ const HeroPlaceholder = styled.div`
   z-index: 1;
 `
 
+const Overlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+`
+
 export default function CharacterHero() {
   return (
     <HeroWrapper>
-      {/* Khi có ảnh thật:
-        <Image src="/image/character-hero.jpg" alt="Character Hero" fill style={{ objectFit: 'cover' }} priority />*/}
+      
+      <Image 
+          src="/image/Character.png" 
+          alt="Character Hero" 
+          fill 
+          style={{ objectFit: 'cover' }} 
+          priority />
+
+      <Overlay/>
+      
       <HeroPlaceholder>
-        Silent Snow,<br />
-        <em style={{ color: 'var(--accent)' }}>Hidden Plum</em>
+        NEW SINNER<br />
+        <em style={{ color: 'var(--accent)' }}>Coming soon</em>
       </HeroPlaceholder>
     </HeroWrapper>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -47,7 +48,10 @@ export default function EventChallenge() {
       <SectionTitle>Ultimate Challenge</SectionTitle>
       <ImgGrid>
         <ImgBlock>
-          {/* <Image src="/image/challenge-1.jpg" alt="Challenge 1" fill style={{ objectFit: 'cover' }} /> */}
+          <Image src="/image/NewBossToA.png" 
+            alt="Challenge 1" 
+            fill 
+            style={{ objectFit: 'cover' }} />
           Image Placeholder
         </ImgBlock>
         <ImgBlock>

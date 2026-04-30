@@ -54,8 +54,7 @@ export default function EventHero() {
       </EventDesc>
 
       <BannerWrapper>
-        {/* Khi có ảnh thật:
-          <Image src="/image/event-banner.jpg" alt="Silent Snow Hidden Plum" fill style={{ objectFit: 'cover' }} />*/}
+          <Image src="/image/Event.png" alt="Silent Snow Hidden Plum" fill style={{ objectFit: 'cover' }} />
         <BannerPlaceholder>
           Silent Snow,<br />
           <em style={{ color: 'var(--accent)' }}>Hidden Plum</em>

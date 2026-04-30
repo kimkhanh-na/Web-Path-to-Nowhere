@@ -80,22 +80,22 @@ const CardAuthor = styled.div`
 `
 
 const benefits = [
-  { title: 'Title', author: 'Author' },
-  { title: 'Title', author: 'Author' },
-  { title: 'Title', author: 'Author' },
-  { title: 'Title', author: 'Author' },
-  { title: 'Title', author: 'Author' },
-  { title: 'Title', author: 'Author' },
-  { title: 'Title', author: 'Author' },
-  { title: 'Title', author: 'Author' },
-  { title: 'Title', author: 'Author' },
+  { title: 'Title', disc: 'Author' },
+  { title: 'Title', disc: 'Author' },
+  { title: 'Title', disc: 'Author' },
+  { title: 'Title', disc: 'Author' },
+  { title: 'Title', disc: 'Author' },
+  { title: 'Title', disc: 'Author' },
+  { title: 'Title', disc: 'Author' },
+  { title: 'Title', disc: 'Author' },
+  { title: 'Title', disc: 'Author' },
 ]
 
 export default function EventBenefits() {
   return (
     <Section>
-      <SectionTitle>Events &amp; Overflowing Benefits</SectionTitle>
-      <SubLabel>Cards</SubLabel>
+      <SectionTitle>Events & Overflowing Benefits</SectionTitle>
+      <SubLabel>Demo</SubLabel>
       <Grid>
         {benefits.map((item, i) => (
           <Card key={i}>
@@ -105,7 +105,7 @@ export default function EventBenefits() {
             </CardImg>
             <CardBody>
               <CardTitle>{item.title}</CardTitle>
-              <CardAuthor>{item.author}</CardAuthor>
+              <CardAuthor>{item.disc}</CardAuthor>
             </CardBody>
           </Card>
         ))}
