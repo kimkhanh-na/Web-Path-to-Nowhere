@@ -1,7 +1,5 @@
-export default function EventPage() {
-  return (
-    <main>
-      <h1>Guide Page</h1>
-    </main>
-  )
+import GuidePage from '@/components/guide/GuidePage'
+
+export default function Guide() {
+  return <GuidePage />
 }

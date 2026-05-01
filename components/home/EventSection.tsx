@@ -1,6 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -94,18 +95,22 @@ const BtnOutline = styled.a`
 `
 
 const EventImg = styled.div`
+  width: 100%;
+  aspect-ratio: 16/10;
   background: var(--bg-card2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
-  border-left: 1px solid var(--border);
-  padding: 2rem;
-  text-align: center;
-  font-family: var(--font-title);
-  font-size: 1.9rem;
-  color: var(--text-main);
-  line-height: 1.2;
+  position: relative;
+  overflow: hidden;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // min-height: 220px;
+  // border-left: 1px solid var(--border);
+  // padding: 2rem;
+  // text-align: center;
+  // font-family: var(--font-title);
+  // font-size: 1.9rem;
+  // color: var(--text-main);
+  // line-height: 1.2;
 `
 
 export default function EventSection() {
@@ -126,7 +131,14 @@ export default function EventSection() {
           </BtnGroup>
         </EventInfo>
         <EventImg>
-          
+          <Image
+            src="/image/EventSection.png"
+            alt="Silent Snow, Hidden Plum"
+            fill
+            sizes='(max-width: 600px) 100vw, 50vw'
+            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            priority
+          />
           Silent<br /><em style={{ color: 'var(--accent)' }}>Snow,</em><br />Hidden<br />Plum
         </EventImg>
       </EventBlock>

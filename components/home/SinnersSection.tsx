@@ -1,6 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -40,16 +41,18 @@ const CardImg = styled.div`
   width: 100%;
   aspect-ratio: 16/10;
   background: var(--bg-card2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-title);
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  text-align: center;
-  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // font-family: var(--font-title);
+  // font-size: 0.65rem;
+  // letter-spacing: 0.1em;
+  // color: var(--text-muted);
+  // text-transform: uppercase;
+  // text-align: center;
+  // padding: 1rem;
 `
 
 const CardBody = styled.div`
@@ -71,9 +74,9 @@ const CardSub = styled.div`
 `
 
 const sinners = [
-  { id: 'MBCC-S-108' },
-  { id: 'MBCC-S-124' },
-  { id: 'MBCC-S-808' },
+  { id: 'MBCC-S-108', img: '/image/NewSinner1.png' },
+  { id: 'MBCC-S-124', img: '/image/NewSinner2.png' },
+  { id: 'MBCC-S-808', img: '/image/NewSinner3.png' },
 ]
 
 export default function SinnersSection() {
@@ -83,7 +86,14 @@ export default function SinnersSection() {
       <Grid>
         {sinners.map((s) => (
           <Card key={s.id}>
-            <CardImg>New Sinner<br />Coming Soon</CardImg>
+            <CardImg>
+              <Image src={s.img}
+                alt={s.id}
+                fill
+                sizes="(max-width:600px) 50vw, 33vw"
+                style={{ objectFit: 'contain' }}
+              />
+              New Sinner<br />Coming Soon</CardImg>
             <CardBody>
               <CardTitle>Profile No: {s.id}</CardTitle>
               <CardSub>Tendency: Unable to Resolve</CardSub>

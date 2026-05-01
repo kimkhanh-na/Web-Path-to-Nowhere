@@ -1,6 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -78,16 +79,26 @@ const NewsDesc = styled.p`
   line-height: 1.55;
 `
 
+const CardImg = styled.div`
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: var(--bg-card2);
+  position: relative;
+  overflow: hidden;
+`
+
 const newsItems = [
   {
     tag: 'Exclusive Skins',
     title: 'Exclusive Skins Revealed',
     desc: "Witness your Sinners in a new light. These exclusive Anniversary looks will only be available for a short window—don't miss out.",
+    img: '/image/ExclusiveSkins.png',
   },
   {
-    tag: 'New Sinners',
-    title: 'New Sinners',
-    desc: 'The Bureau has detected a powerful new presence. Can you deduce the true identity behind this silhouette?',
+    tag: 'Rerun SinnerS Limited',
+    title: 'Exclusive Arrest Rerun Starts',
+    desc: 'Are you ready to bring them into your custody, Chiefs???',
+    img: '/image/RerunSinners.png'
   },
 ]
 
@@ -100,7 +111,14 @@ export default function NewsSection() {
       <NewsGrid>
         {newsItems.map((item) => (
           <NewsCard key={item.title}>
-            <Thumb>Image Placeholder</Thumb>
+            <CardImg>
+              <Image src={item.img}
+                  alt={item.tag}
+                  fill
+                  sizes="(max-width:600px) 50vw, 33vw"
+                  style={{ objectFit: 'contain' }}
+              />
+            </CardImg>
             <Body>
               <div><Tag>{item.tag}</Tag></div>
               <NewsTitle>{item.title}</NewsTitle>
