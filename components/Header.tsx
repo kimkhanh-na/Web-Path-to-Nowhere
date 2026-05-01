@@ -3,6 +3,7 @@
 import styled from 'styled-components'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 
 const Nav = styled.nav`
   position: sticky;
@@ -16,6 +17,10 @@ const Nav = styled.nav`
   justify-content: space-between;
   padding: 0 2.5rem;
   height: 60px;
+
+  @media (max-width: 768px) {
+    padding: 0 1.25rem;
+  }
 `
 
 const Logo = styled(Link)`
@@ -26,10 +31,23 @@ const Logo = styled(Link)`
   text-decoration: none;
 `
 
-const NavList = styled.ul`
+const NavList = styled.ul<{ $open: boolean }>`
   display: flex;
   gap: 0.25rem;
   list-style: none;
+
+  @media (max-width: 768px) {
+    display: ${({ $open }) => ($open ? 'flex' : 'none')};
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(13, 10, 7, 0.98);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    gap: 0.25rem;
+  }
 `
 
 const NavLink = styled(Link)<{ $active: boolean }>`
@@ -44,10 +62,49 @@ const NavLink = styled(Link)<{ $active: boolean }>`
   border-radius: 3px;
   text-decoration: none;
   transition: color 0.2s, background 0.2s;
+  display: block;
 
   &:hover {
     color: ${({ $active }) => ($active ? '#0d0a07' : 'var(--text-main)')};
   }
+`
+
+const HamburgerBtn = styled.button`
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  flex-direction: column;
+  gap: 5px;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`
+
+const Bar = styled.span<{ $open: boolean; $index: number }>`
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+
+  ${({ $open, $index }) =>
+    $open &&
+    $index === 0 &&
+    'transform: translateY(7px) rotate(45deg);'}
+
+  ${({ $open, $index }) =>
+    $open &&
+    $index === 1 &&
+    'opacity: 0;'}
+
+  ${({ $open, $index }) =>
+    $open &&
+    $index === 2 &&
+    'transform: translateY(-7px) rotate(-45deg);'}
 `
 
 const navItems = [
@@ -60,13 +117,26 @@ const navItems = [
 
 export default function Header() {
   const pathname = usePathname()
+  const [open, setOpen] = useState(false)
+
   return (
     <Nav>
-      <Logo href="/">LeKimKhanh</Logo>
-      <NavList>
+      <Logo href="/">Path To Nowhere</Logo>
+
+      <HamburgerBtn onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <Bar $open={open} $index={0} />
+        <Bar $open={open} $index={1} />
+        <Bar $open={open} $index={2} />
+      </HamburgerBtn>
+
+      <NavList $open={open}>
         {navItems.map((item) => (
           <li key={item.href}>
-            <NavLink href={item.href} $active={pathname === item.href}>
+            <NavLink
+              href={item.href}
+              $active={pathname === item.href}
+              onClick={() => setOpen(false)}
+            >
               {item.label}
             </NavLink>
           </li>
