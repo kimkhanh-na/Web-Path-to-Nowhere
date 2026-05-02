@@ -1,6 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -48,7 +49,7 @@ const Card = styled.div`
 
 const CardImg = styled.div`
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 16/9;
   background: var(--bg-card2);
   display: flex;
   align-items: center;
@@ -80,15 +81,42 @@ const CardAuthor = styled.div`
 `
 
 const benefits = [
-  { title: 'Title', disc: 'Author' },
-  { title: 'Title', disc: 'Author' },
-  { title: 'Title', disc: 'Author' },
-  { title: 'Title', disc: 'Author' },
-  { title: 'Title', disc: 'Author' },
-  { title: 'Title', disc: 'Author' },
-  { title: 'Title', disc: 'Author' },
-  { title: 'Title', disc: 'Author' },
-  { title: 'Title', disc: 'Author' },
+  { 
+    title: 'Silent Snow Hidden Plum', disc: 'Time-limited event', 
+    img: '/image/Event.png',
+  },
+  { 
+    title: 'Celebration Emotion Check', disc: 'The Special Rewards', 
+    img: '/image/Event2.png'
+  },
+  { 
+    title: 'Fortune Scratch', disc: 'Special Bonus', 
+    img: '/image/Event3.png'
+  },
+  { 
+    title: 'Snowlit Seclusion', disc: 'Exclusive Arrest', 
+    img: '/image/Event4.png'
+  },
+  { 
+    title: 'Untamed Gale', disc: 'Event Arrest', 
+    img: '/image/Event5.png'
+  },
+  { 
+    title: 'Cusp of a New Year', disc: 'Exclusive Arrest Rerun', 
+    img: '/image/Event6.png'
+  },
+  { 
+    title: 'Title', disc: 'Author', 
+    img: '/image/Benefit1.png'
+  },
+  { 
+    title: 'Treasure Gallery', disc: 'Limited-Time Attire Purchase Bonus', 
+    img: '/image/Benefit2.png'
+  },
+  { 
+    title: 'Golden Tribute', disc: 'Seasonal Pass', 
+    img: '/image/Benefit3.png'
+  },
 ]
 
 export default function EventBenefits() {
@@ -100,8 +128,13 @@ export default function EventBenefits() {
         {benefits.map((item, i) => (
           <Card key={i}>
             <CardImg>
-              {/* <Image src={`/image/benefit-${i}.jpg`} alt={item.title} fill style={{ objectFit: 'cover' }} /> */}
-              Image
+              <Image src={item.img}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 600px) 50vw, 33vw"
+                  style={{ objectFit: 'contain' }} 
+              />
+              
             </CardImg>
             <CardBody>
               <CardTitle>{item.title}</CardTitle>

@@ -126,7 +126,11 @@ export default function NewSinners() {
       {sinners.map((s, i) => (
         <SinnerRow key={i}>
           <SinnerImg>
-            <Image src={s.img} alt={s.name} fill style={{ objectFit: 'contain' }} />
+            <Image src={s.img} 
+                alt={s.name} 
+                fill 
+                sizes="(max-width: 600px) 100vw, 280px"
+                style={{ objectFit: 'contain' }} />
             
           </SinnerImg>
           <SinnerInfo>

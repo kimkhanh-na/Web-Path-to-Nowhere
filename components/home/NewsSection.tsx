@@ -106,7 +106,7 @@ export default function NewsSection() {
   return (
     <Section>
       <SectionTitle>
-        Shadows Emerging: New Sinners &amp; Exclusive Skins Revealed.
+        Special: Unveiling the Secrets of Eastia.
       </SectionTitle>
       <NewsGrid>
         {newsItems.map((item) => (

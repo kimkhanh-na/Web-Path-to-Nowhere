@@ -1,6 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import styled from 'styled-components'
+import { useRouter } from 'next/navigation'
+import CountdownModal from '@/components/CountdownModal'
 
 const Banner = styled.div`
   background: var(--accent);
@@ -57,13 +60,27 @@ const BtnOutlineDark = styled.button`
 `
 
 export default function BannerCTA() {
+  const [showModal, setShowModal] = useState(false)
+  const router = useRouter()
+
   return (
-    <Banner>
-      <BannerText>3.5 year anniversary</BannerText>
-      <BtnGroup>
-        <BtnDark>Coming soon!</BtnDark>
-        <BtnOutlineDark>EVENT</BtnOutlineDark>
-      </BtnGroup>
-    </Banner>
+    <>
+      <Banner>
+        <BannerText>3.5 year anniversary</BannerText>
+        <BtnGroup>
+          <BtnDark onClick={() => setShowModal(true)}>
+            Coming soon!
+          </BtnDark>
+          <BtnOutlineDark onClick={() => router.push('/event')}>
+            EVENT
+          </BtnOutlineDark>
+        </BtnGroup>
+      </Banner>
+
+      <CountdownModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+      />
+    </>
   )
 }

@@ -2,6 +2,8 @@
 
 import styled from 'styled-components'
 import Image from 'next/image'
+import { useState } from 'react'
+import CountdownModal from '../CountdownModal'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -109,6 +111,8 @@ const AccentSub = styled.p`
 `
 
 export default function HeroSection() {
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <Section>
       <Title>3.5 Year Anniversary</Title>
@@ -117,7 +121,14 @@ export default function HeroSection() {
         It appears to be a swordsman with a raised blade. Could this be a challenge?
         MBCC is already tracking the signal. Awaiting your arrival to uncover the truth.
       </Desc>
-      <Btn href="#">Coming Soon!</Btn>
+      <Btn href="#" onClick={(e) => {e.preventDefault(); setShowModal(true) }}>
+        Coming Soon!
+      </Btn>
+      <CountdownModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+      />
+
       <Banner>
         <BannerImg>
           <Image

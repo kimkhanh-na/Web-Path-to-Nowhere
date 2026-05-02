@@ -51,12 +51,17 @@ export default function EventChallenge() {
           <Image src="/image/NewBossToA.png" 
             alt="Challenge 1" 
             fill 
+            sizes="(max-width: 600px) 100vw, 50vw"
             style={{ objectFit: 'cover' }} />
-          Image Placeholder
+          
         </ImgBlock>
         <ImgBlock>
-          {/* <Image src="/image/challenge-2.jpg" alt="Challenge 2" fill style={{ objectFit: 'cover' }} />  */}
-          Image Placeholder
+          <Image src="/image/reforge.png" 
+            alt="Challenge 2" 
+            fill 
+            sizes="(max-width: 600px) 100vw, 50vw"
+            style={{ objectFit: 'cover' }} />
+          
         </ImgBlock>
       </ImgGrid>
     </Section>

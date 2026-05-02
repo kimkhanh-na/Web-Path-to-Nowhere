@@ -54,7 +54,12 @@ export default function EventHero() {
       </EventDesc>
 
       <BannerWrapper>
-          <Image src="/image/Event.png" alt="Silent Snow Hidden Plum" fill style={{ objectFit: 'cover' }} />
+          <Image src="/image/Event.png" 
+              alt="Silent Snow Hidden Plum" 
+              fill 
+              sizes='100vw'
+              priority
+              style={{ objectFit: 'cover' }} />
         <BannerPlaceholder>
           Silent Snow,<br />
           <em style={{ color: 'var(--accent)' }}>Hidden Plum</em>

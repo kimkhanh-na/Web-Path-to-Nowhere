@@ -2,6 +2,8 @@
 
 import styled from 'styled-components'
 import Image from 'next/image'
+import { useState } from 'react'
+import CountdownModal from '../CountdownModal'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -114,6 +116,8 @@ const EventImg = styled.div`
 `
 
 export default function EventSection() {
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <Section>
       <SectionTitle>Event Coming Soon!</SectionTitle>
@@ -126,7 +130,9 @@ export default function EventSection() {
             Amidst deepening storms, the plum flowers.
           </EventDesc>
           <BtnGroup>
-            <BtnPrimary href="/">Coming Soon!</BtnPrimary>
+            <BtnPrimary href="/" onClick={(e) => { e.preventDefault(); setShowModal(true) }}>
+              Coming Soon!
+            </BtnPrimary>
             <BtnOutline href="/event">EVENT</BtnOutline>
           </BtnGroup>
         </EventInfo>
@@ -142,6 +148,11 @@ export default function EventSection() {
           Silent<br /><em style={{ color: 'var(--accent)' }}>Snow,</em><br />Hidden<br />Plum
         </EventImg>
       </EventBlock>
+
+      <CountdownModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+      />
     </Section>
   )
 }
