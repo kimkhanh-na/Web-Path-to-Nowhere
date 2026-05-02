@@ -1,6 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -29,22 +30,16 @@ const SinnerRow = styled.div`
   transition: border-color 0.2s;
   &:hover { border-color: var(--accent); }
   @media (max-width: 600px) { grid-template-columns: 1fr; }
+  grid-template-columns: 2fr 1fr;  
 `
 
 const SinnerImg = styled.div`
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/10;  /* ← tăng chiều cao hình */
   background: var(--bg-card2);
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-title);
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 `
 
 const SinnerInfo = styled.div`
@@ -109,18 +104,18 @@ const BtnSecondary = styled.a`
 const sinners = [
   {
     name: 'Jichuan',
-    desc: 'MBCC-S-124;',
-    img: '/image/xiaofeng.jpg',
+    desc: 'MBCC-S-124; Catalyst Tendency',
+    img: '/image/Jichuan2.png',
   },
   {
     name: 'Xiaofeng',
     desc: 'MBCC-S-108; Fury Tendency',
-    img: '/image/xiaofeng2.jpg',
+    img: '/image/Xiaofeng2.png',
   },
   {
     name: 'Ayiguo',
     desc: 'MBCC-S-808; Endura Tendency',
-    img: '/image/xiaofeng3.jpg',
+    img: '/image/Ayiguo2.png',
   },
 ]
 
@@ -131,8 +126,8 @@ export default function NewSinners() {
       {sinners.map((s, i) => (
         <SinnerRow key={i}>
           <SinnerImg>
-            {/* <Image src={s.img} alt={s.name} fill style={{ objectFit: 'cover' }} /> */}
-            Image Placeholder
+            <Image src={s.img} alt={s.name} fill style={{ objectFit: 'contain' }} />
+            
           </SinnerImg>
           <SinnerInfo>
             <SinnerName>{s.name}</SinnerName>

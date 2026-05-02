@@ -1,6 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -105,34 +106,46 @@ export default function LimitedRerun() {
       <Layout>
         <FeaturedImg>
           <ImgBlock>
-            {/* <Image src="/image/featured.jpg" alt="Featured" fill style={{ objectFit: 'cover' }} /> */}
+            <Image src="/image/Yingying2.png" 
+                alt="Yingying" 
+                fill 
+                sizes="(max-width: 600px) 100vw, 50vw"
+                style={{ objectFit: 'cover' }} />
             Featured Image
           </ImgBlock>
           <ImgCaption>
-            <CaptionTitle>Featured product</CaptionTitle>
-            <CaptionDesc>Description of featured product</CaptionDesc>
+            <CaptionTitle>Yingying</CaptionTitle>
+            <CaptionDesc> MBCC-S-026; Arcane Tendency</CaptionDesc>
           </ImgCaption>
         </FeaturedImg>
 
         <RightCol>
           <SmallCard>
             <SmallImg>
-              {/* <Image src="/image/product-1.jpg" alt="Product 1" fill style={{ objectFit: 'cover' }} /> */}
+              <Image src="/image/Yao2.png" 
+                  alt="Yao" 
+                  fill 
+                  sizes="(max-width: 600px) 100vw, 25vw"
+                  style={{ objectFit: 'cover' }} /> 
               Image
             </SmallImg>
             <SmallBody>
-              <CaptionTitle>Product</CaptionTitle>
-              <CaptionDesc>Description of top product</CaptionDesc>
+              <CaptionTitle>Yao</CaptionTitle>
+              <CaptionDesc> MBCC-S-192; Fury Tendency</CaptionDesc>
             </SmallBody>
           </SmallCard>
           <SmallCard>
             <SmallImg>
-              {/* <Image src="/image/product-2.jpg" alt="Product 2" fill style={{ objectFit: 'cover' }} /> */}
+              <Image src="/image/Deren2.png" 
+                  alt="Deren" 
+                  fill 
+                  sizes="(max-width: 600px) 100vw, 25vw"
+                  style={{ objectFit: 'cover' }} /> 
               Image
             </SmallImg>
             <SmallBody>
-              <CaptionTitle>Product</CaptionTitle>
-              <CaptionDesc>Description of lower product</CaptionDesc>
+              <CaptionTitle>Deren</CaptionTitle>
+              <CaptionDesc> MBCC-S-014; Fury Tendency</CaptionDesc>
             </SmallBody>
           </SmallCard>
         </RightCol>

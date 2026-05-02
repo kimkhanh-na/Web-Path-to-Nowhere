@@ -12,7 +12,7 @@ export const guides: GuideSection[] = [
   {
     id: 'yao',
     title: 'Yao reforge',
-    img: '/image/yao.jpg',
+    img: '/image/Yao.png',
     imgSide: 'right',
     content: [
       'If you are not intending to Reforge her, then no, do not pull Yao.',
@@ -28,7 +28,7 @@ export const guides: GuideSection[] = [
   {
     id: 'deren',
     title: 'Deren reforge',
-    img: '/image/deren.jpg',
+    img: '/image/Deren.png',
     imgSide: 'left',
     content: [
       'This was truly our Powercreep to Nowhere. RF Deren is re-employed as HELL and Jelena will never retire, all hail CRIT!',
@@ -44,15 +44,19 @@ export const guides: GuideSection[] = [
   {
     id: 'jichuan',
     title: 'Jichuan guide',
-    img: '/image/jichuan.jpg',
+    img: '/image/Jichuan.png',
     imgSide: 'right',
     content: [
-      'AISNO combined two overpowered God-tier Catalysts into one Sinner and created Jichuan.',
-      'Any shackles are really good — S0 provides high uptime 40% ATK buff, 20% Skill Damage, AND an Energy-refunding gimmick.',
+      'AISNO combined two overpowered GOD-tier Catalysts into one Sinner and created Jichuan.',
+      'Any shackles are really good — Jichuan is complete at S0.',
     ],
     builds: [
-      'S0 Jichuan Lv90 - Standard support build focusing on ATK and Skill Damage buffs.',
+      'Jichuan is complete at S0.',
+      'S1 is fantastic value for one single shackle, and so early at that instead of being stuck at S3 like Margaret. Strongly recommended for everyone to aim for at least S1 Jichuan. If you are willing to learn when to use Heavenly Path and when to use Mortal Path, stopping at S1 is actually fine; S4 just makes it beyond easy to play Jichuan and get maximum returns without thinking.',
+      'S3 Is alright, somewhat uncommon buff category but not unique. Also, this does not work for Normal Attack Damage-heavy teams like Shattered Blade (Augustus) or Aurum Summon.',
+      'S4 is OP. It is very broken, highly recommended to save as many pulls as you can to chase this shackle. For a full explanation of why it is so OP, refer to the full Jichuan guide which contains a bunch of maths.',
+      'S5 is nice to have (like, if you have S4, you might as well get S5 I guess?) and quite enjoyable to mess around with for silly DPS Jichuan clears, but not super important to have.',
     ],
-    synergies: 'Best paired with Yao and Lichen. Works in virtually any team that needs ATK buffs.',
+    synergies: 'YAO AND XIAOFENG BOTH NEED JICHUAN, SO PULL HER FIRST BEFORE PULLING THEM!!!!!!',
   },
 ]

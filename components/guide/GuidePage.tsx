@@ -166,11 +166,14 @@ export default function GuidePage() {
 
             <ImgCol $imgSide={guide.imgSide}>
               <ImgWrapper>
-                {/* Khi có ảnh thật:
-                  <Image src={guide.img} alt={guide.title} fill
-                    sizes="280px" style={{ objectFit: 'cover', objectPosition: 'top' }} />
-                */}
-                Image Placeholder
+                
+                  <Image src={guide.img} 
+                      alt={guide.title} 
+                      fill
+                      sizes="280px" 
+                      style={{ objectFit: 'cover', objectPosition: 'top' }}
+                   />
+                
               </ImgWrapper>
             </ImgCol>
           </ContentGrid>
