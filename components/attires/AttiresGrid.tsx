@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { endpoints } from '@/data/api'
+import Image from 'next/image'
 
 
 const Section = styled.section`
@@ -123,11 +124,13 @@ export default function AttiresGrid() {
         {attires.map((item) => (
           <Card key={item.id}>
             <CardImg>
-              {/* Khi có ảnh thật:
-                <Image src={item.image} alt={item.title} fill
+              
+                <Image src={item.image} 
+                  alt={item.title} 
+                  fill
                   sizes="(max-width:600px) 50vw, 33vw"
                   style={{ objectFit: 'cover' }} />
-              */}
+              
               Image
             </CardImg>
             <CardBody>
