@@ -56,27 +56,28 @@ const recommendations = [
   {
     name: 'Jichuan',
     icon: '🔒',
-    desc: 'AISNO looked at our Path to Catalyst jokes and went hmm, how about we make two overpowered God-tier Catalysts… and then combine them into one Sinner? And thus Jichuan was born. Any shackles you can get will be really good; S0 high uptime 40% ATK buff, 20% Skill Damage Dealt, AND an Energy-refunding gimmick.',
+    desc: 'The highest priority among the current banners. Her ability to buff ATK, elemental damage, provide defensive support, and accelerate energy regeneration allows Jichuan to fit into all popular team comps, especially the upcoming Wind-Overlimit team. DO NOT SKIP. Jichuan is very strong overall, S1 recommended for all players.',
+    
   },
   {
     name: 'Yingying',
     icon: '🔒',
-    desc: 'AISNO misspelled her name, which is "role compression". At S0/S1 she can slow, deal solid AoE damage, and hit an AoE 3 corebreak. At S3, she brings a whopping 24% damage taken amp, and S4 is essentially a free Cabernet ECB on all elite mobs.',
+    desc: 'In my opinion, you should get at least S0. Recommended Shackles: S0 is enough for now. If you have spare cubes, S1 expands her skill range for better positioning. For high investment or fans of the character, S3 is the sweet spot.',
   },
   {
     name: 'Yao',
     icon: '🔒',
-    desc: 'RF Yao is not particularly shackle reliant (nice!) but is somewhat team reliant (boooo) and really wants to be played with Jichuan, and to a lesser extent Lichen. Slight point deduction to Yao\'s rating as Lichen is a S-Rank that is strictly used for Burn team.',
+    desc: 'Must Reforge; if not, skip her entirely. Recommended Shackles: For RF Yao, S0 is sufficient. If you like her, S1 or S3 is the limit. Given the current economy and 4 limited banners in one event, S0 is plenty for newbies and F2P players.',
   },
   {
     name: 'Deren',
     icon: '🔒',
-    desc: 'Man, Deren is so re-employed! She fits a somewhat similar role to RF Adela, doing a frick-ton of CRIT damage on their ECB to delete bosses at the end of a fight. Deren is a little more versatile with better flexibility on her Ult to deal damage and corebreaks.',
+    desc: "Man, Deren is so re-employed! She fits a somewhat similar role to RF Adela, doing a frick-ton of CRIT damage on their ECB to delete bosses at the end of a fight. Deren is a little more versatile with better flexibility on her Ult to deal damage and corebreaks. However, she has to compete for the main DPS slot in Crit teams against Adela RF and Bai Yi RF. Since she also requires at least S1, she is a safe skip.",
   },
   {
     name: 'Xiaofeng',
     icon: '🔒',
-    desc: "S0 Xiaofeng is not really a full character; due to how Overlimit works, you tend to end up needing that extra starting energy to just get the Tiger Spirits out ASAP. Also, her S3 and S4 respectively are pretty big (and important) damage spikes, as otherwise you'd need a fairly stacked team to support her at low shackles, strong gameplay knowledge, and a willingness to babysit the Overlimit meter in stages lacking cores. While she tears up maps at high shackles, it's a far cry from the performance of Jichuan shackle-for-shackle, the other S-Rank released with her.",
+    desc: "Consider skipping if you already have Zoya RF as your main Overlimit DPS and are low on cubes. Recommended Shackles: S1 is the most optimal. If you have extra resources, S3 and S4 offer significant damage boosts.",
   },
   {
     name: 'Ayiguo',
