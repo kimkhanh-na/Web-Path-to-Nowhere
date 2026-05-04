@@ -2,6 +2,9 @@
 
 import styled from 'styled-components'
 import Image from 'next/image'
+import { useState } from 'react'
+import CountdownModal from '../CountdownModal'
+import Link from 'next/link'
 
 const Section = styled.section`
   margin-bottom: 3.5rem;
@@ -120,6 +123,9 @@ const sinners = [
 ]
 
 export default function NewSinners() {
+  const [showModal, setShowModal] = useState(false)
+
+
   return (
     <Section>
       <SectionTitle>New Sinners – The Shackles Tighten</SectionTitle>
@@ -137,12 +143,24 @@ export default function NewSinners() {
             <SinnerName>{s.name}</SinnerName>
             <SinnerDesc>{s.desc}</SinnerDesc>
             <BtnGroup>
-              <BtnPrimary href="#">Coming soon</BtnPrimary>
-              <BtnSecondary href="#">Pull</BtnSecondary>
+              <BtnPrimary href="#" 
+                onClick={(e) => { e.preventDefault(); setShowModal(true) }}
+              >
+                Coming soon
+              </BtnPrimary>
+              <BtnSecondary as={Link} href="/guide">
+                Guide
+              </BtnSecondary>
             </BtnGroup>
           </SinnerInfo>
         </SinnerRow>
       ))}
+
+      <CountdownModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+      />
+      
     </Section>
   )
 }

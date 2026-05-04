@@ -113,7 +113,7 @@ const SynergyLabel = styled.span`
 export default function GuidePage() {
   return (
     <PageWrapper>
-      <PageTitle>Guide xtreme reforge</PageTitle>
+      <PageTitle>Guide 3.5 Anniversary</PageTitle>
 
       {guides.map((guide, index) => (
         <GuideBlock key={guide.id}>

@@ -42,10 +42,28 @@ export const guides: GuideSection[] = [
     synergies: 'Jelena is core for CRIT team. L.L. for energy and Skill Damage. Generic Physical Damage Corebreakers like Yugu, Moore, Shin, Parfait work well.',
   },
   {
+    id: 'yingying',
+    title: 'Yingying guide',
+    img: '/image/Yingying.png',
+    imgSide: 'right',
+    content: [
+      'AISNO mispelled her name, which is "role compression".',
+      'Most crucially, she has the unique ability to allow all other Arcane Sinners to CRIT with their abilities, completely changing the meta.',
+      'This specifically is what earns her a spot in GOD tier, being "irreplaceable in her role". However, there are many options for Magic Damage now, so having Yingying to create Arcane CRIT is no longer a must.',
+    ],
+    builds: [
+      'Yingying is complete at S0.',
+      'S0/S1 she can slow, deal solid AoE damage, and hit an AoE 3 corebreak.',
+      'S3 she brings a whopping 24% damage taken amp.',
+      'S4 is essentially a free Cabernet ECB on all elite mobs.',
+    ],
+    synergies: 'Yingying enables Arcane Sinners to CRIT even at S0, opening up all your Arcane Sinners to new possibilities.',
+  },
+  {
     id: 'jichuan',
     title: 'Jichuan guide',
     img: '/image/Jichuan.png',
-    imgSide: 'right',
+    imgSide: 'left',
     content: [
       'AISNO combined two overpowered GOD-tier Catalysts into one Sinner and created Jichuan.',
       'Any shackles are really good — Jichuan is complete at S0.',
@@ -58,5 +76,22 @@ export const guides: GuideSection[] = [
       'S5 is nice to have (like, if you have S4, you might as well get S5 I guess?) and quite enjoyable to mess around with for silly DPS Jichuan clears, but not super important to have.',
     ],
     synergies: 'YAO AND XIAOFENG BOTH NEED JICHUAN, SO PULL HER FIRST BEFORE PULLING THEM!!!!!!',
+  },
+  {
+    id: 'xiaofeng',
+    title: 'Xiaofeng guide',
+    img: '/image/Xiaofeng.png',
+    imgSide: 'right',
+    content: [
+      'Xiaofeng is a Physical Main DPS who uses the Overlimit Potestas.',
+      'Occupying a similar position to Vautour Bleu, her performance at low shackles is passable, while at S4 her damage ceiling is meta-breakingly high.',
+      'However, this does require investment in a full S-Rank team at high shackles, and thus she is not recommended for casual or F2P players.',
+    ],
+    builds: [
+      "S0 Xiaofeng is technically complete, but feels quite bad to play in practice due to most stages making it so you barely scrape up enough Chief Energy with Rust and Jichuan working overtime. ",
+      "S1 makes it free to summon her first two tigers, greatly relieving this energy problem, so it's recommend most players to go for that. ",
+      "S3 and S4 respectively are pretty big (and important) damage spikes, as otherwise you'd need a fairly stacked team to support her at low shackles, strong gameplay knowledge, and a willingness to babysit the Overlimit meter in stages lacking cores.",
+    ],
+    synergies: "S0 Xiaofeng really needs Rust as a crutch, but S3 doesn't. Clementine is an excellent fit into Xiaofeng's team in particular.",
   },
 ]
