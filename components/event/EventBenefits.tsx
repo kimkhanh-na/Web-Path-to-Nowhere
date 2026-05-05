@@ -106,7 +106,7 @@ const benefits = [
     img: '/image/Event6.png'
   },
   { 
-    title: 'Title', disc: 'Author', 
+    title: 'Log in Reward', disc: 'Limited-Time', 
     img: '/image/Benefit1.png'
   },
   { 
