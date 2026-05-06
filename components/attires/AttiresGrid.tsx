@@ -23,7 +23,8 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  @media (max-width: 600px) { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 600px) { grid-template-columns: 1fr; }
+  //@media (max-width: 600px) { grid-template-columns: 1fr 1fr; }
 `
 
 const Card = styled.div`

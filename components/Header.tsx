@@ -50,7 +50,7 @@ const NavList = styled.ul<{ $open: boolean }>`
   }
 `
 
-const NavLink = styled(Link)<{ $active: boolean }>`
+const NavLink = styled(Link)<{ $active: boolean; $special?: boolean }>`
   font-family: var(--font-title);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
@@ -67,6 +67,11 @@ const NavLink = styled(Link)<{ $active: boolean }>`
   &:hover {
     color: ${({ $active }) => ($active ? '#0d0a07' : 'var(--text-main)')};
   }
+
+  background: ${({ $active, $special }) =>
+    $active && $special ? 'var(--accent)' :
+    $active ? 'var(--accent)' : 'transparent'};
+  border: ${({ $special }) => $special ? '1px solid var(--accent)' : 'none'};
 `
 
 const HamburgerBtn = styled.button`
@@ -113,6 +118,7 @@ const navItems = [
   { label: 'Character', href: '/character' },
   { label: 'Attires', href: '/attires' },
   { label: 'Guide', href: '/guide' },
+  { label: 'CREATOR', href: '/creator', special: true},
 ]
 
 export default function Header() {

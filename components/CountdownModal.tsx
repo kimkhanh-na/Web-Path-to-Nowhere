@@ -19,9 +19,11 @@ const Modal = styled.div`
   background: var(--bg-dark);
   border: 2px solid var(--accent2);
   border-radius: 8px;
-  padding: 2rem;
-  width: 90%;
+  padding: 1.5rem;
+  width: 92%;
   max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
 `
 
 const Inner = styled.div`
@@ -36,6 +38,10 @@ const Grid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const InfoBox = styled.div`
@@ -60,8 +66,9 @@ const InfoValue = styled.div`
 const CountdownRow = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
+  flex-wrap: nowrap;
 `
 
 const TimeBox = styled.div`
@@ -75,12 +82,18 @@ const TimeNum = styled.div`
   font-family: var(--font-title);
   font-size: 2rem;
   color: var(--accent);
-  min-width: 60px;
+  min-width: 52px;
   text-align: center;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 4px;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.4rem;
+
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+    min-width: 38px;
+    padding: 0.2rem 0.3rem;
+  }
 `
 
 const TimeLabel = styled.div`
@@ -97,6 +110,11 @@ const Separator = styled.div`
   color: var(--accent);
   align-self: center;
   margin-bottom: 1.25rem;
+
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+    margin-bottom: 0.9rem;
+  }
 `
 
 const CloseBtn = styled.button`
