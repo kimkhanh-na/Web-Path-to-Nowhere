@@ -3,9 +3,38 @@
 import styled from 'styled-components'
 import { Typography, Divider } from 'antd'
 import Image from 'next/image'
+import { useState } from 'react'
 import { guides } from '@/data/guides'
 
-const { Title, Paragraph, Text } = Typography
+const { Paragraph } = Typography
+
+/* ── Tabs ── */
+const TabBar = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+`
+
+const Tab = styled.button<{ $active: boolean }>`
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.1rem;
+  border-radius: 4px;
+  border: 1px solid ${p => p.$active ? 'var(--accent)' : 'var(--border)'};
+  background: ${p => p.$active ? 'var(--accent)' : 'transparent'};
+  color: ${p => p.$active ? '#0d0a07' : 'var(--text-muted)'};
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    border-color: var(--accent);
+    color: ${p => p.$active ? '#0d0a07' : 'var(--accent)'};
+  }
+`
 
 /* ── Wrappers ── */
 const PageWrapper = styled.div`
@@ -23,10 +52,6 @@ const PageTitle = styled.h1`
   margin-bottom: 2.5rem;
 `
 
-const GuideBlock = styled.div`
-  margin-bottom: 3.5rem;
-`
-
 const GuideTitle = styled.h2`
   font-family: var(--font-title);
   font-size: 1.4rem;
@@ -35,9 +60,6 @@ const GuideTitle = styled.h2`
   margin-bottom: 1.25rem;
 `
 
-/* ── $ là convention của Styled Components 
-để đánh dấu transient props 
-(props chỉ dùng cho styling, không truyền xuống DOM). ── */
 const ContentGrid = styled.div<{ $imgSide: 'left' | 'right' }>`
   display: grid;
   grid-template-columns: ${({ $imgSide }) =>
@@ -68,13 +90,6 @@ const ImgWrapper = styled.div`
   border: 1px solid var(--border);
   background: var(--bg-card);
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-title);
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
 `
 
 const BuildsLabel = styled.div`
@@ -111,78 +126,83 @@ const SynergyLabel = styled.span`
 `
 
 export default function GuidePage() {
+  const [activeId, setActiveId] = useState(guides[0].id)
+  const guide = guides.find(g => g.id === activeId)!
+
   return (
     <PageWrapper>
       <PageTitle>Guide 3.5 Anniversary</PageTitle>
 
-      {guides.map((guide, index) => (
-        <GuideBlock key={guide.id}>
-          <GuideTitle>{guide.title}</GuideTitle>
+      {/* Tab Bar */}
+      <TabBar>
+        {guides.map(g => (
+          <Tab
+            key={g.id}
+            $active={g.id === activeId}
+            onClick={() => setActiveId(g.id)}
+          >
+            {g.title}
+          </Tab>
+        ))}
+      </TabBar>
 
-          <ContentGrid $imgSide={guide.imgSide}>
-            <TextCol $imgSide={guide.imgSide}>
-              {/* Paragraphs */}
-              {guide.content.map((para, i) => (
-                <Paragraph
-                  key={i}
-                  style={{
-                    color: 'var(--text-muted)',
-                    fontSize: '0.9rem',
-                    lineHeight: 1.8,
-                    marginBottom: '0.75rem',
-                  }}
-                >
-                  {para}
-                </Paragraph>
-              ))}
+      {/* Nội dung nhân vật đang chọn */}
+      <GuideTitle>{guide.title}</GuideTitle>
 
-              {/* Builds */}
-                <BuildsLabel>Max builds:</BuildsLabel>
-                    <ul style={{ paddingLeft: '1rem', margin: '0 0 0.5rem' }}>
-                        {guide.builds.map((build, i) => (
-                            <li
-                                key={i}
-                                style={{
-                                    color: 'var(--text-muted)',
-                                    fontSize: '0.85rem',
-                                    lineHeight: 1.8,
-                                    marginBottom: '0.4rem',
-                                    listStyleType: 'none',
-                                    paddingLeft: '0.5rem',
-                                }}
-                            >
-                            <span style={{ color: 'var(--accent)', marginRight: '0.5rem' }}>•</span>
-                            {build}
-                            </li>
-                        ))}
-                    </ul>
+      <ContentGrid $imgSide={guide.imgSide}>
+        <TextCol $imgSide={guide.imgSide}>
+          {guide.content.map((para, i) => (
+            <Paragraph
+              key={i}
+              style={{
+                color: 'var(--text-muted)',
+                fontSize: '0.9rem',
+                lineHeight: 1.8,
+                marginBottom: '0.75rem',
+              }}
+            >
+              {para}
+            </Paragraph>
+          ))}
 
-              {/* Synergies */}
-              <SynergyBox>
-                <SynergyLabel>Synergies</SynergyLabel>
-                {guide.synergies}
-              </SynergyBox>
-            </TextCol>
+          <BuildsLabel>Max builds:</BuildsLabel>
+          <ul style={{ paddingLeft: '1rem', margin: '0 0 0.5rem' }}>
+            {guide.builds.map((build, i) => (
+              <li
+                key={i}
+                style={{
+                  color: 'var(--text-muted)',
+                  fontSize: '0.85rem',
+                  lineHeight: 1.8,
+                  marginBottom: '0.4rem',
+                  listStyleType: 'none',
+                  paddingLeft: '0.5rem',
+                }}
+              >
+                <span style={{ color: 'var(--accent)', marginRight: '0.5rem' }}>•</span>
+                {build}
+              </li>
+            ))}
+          </ul>
 
-            <ImgCol $imgSide={guide.imgSide}>
-              <ImgWrapper>
-                
-                  <Image src={guide.img} 
-                      alt={guide.title} 
-                      fill
-                      sizes="280px" 
-                      style={{ objectFit: 'cover', objectPosition: 'top' }}
-                   />
-                
-              </ImgWrapper>
-            </ImgCol>
-          </ContentGrid>
+          <SynergyBox>
+            <SynergyLabel>Synergies</SynergyLabel>
+            {guide.synergies}
+          </SynergyBox>
+        </TextCol>
 
-          {index < guides.length - 1 && (
-            <Divider style={{ borderColor: 'var(--border)', marginTop: '2.5rem' }} />
-          )}
-        </GuideBlock>
-      ))}
+        <ImgCol $imgSide={guide.imgSide}>
+          <ImgWrapper>
+            <Image
+              src={guide.img}
+              alt={guide.title}
+              fill
+              sizes="280px"
+              style={{ objectFit: 'cover', objectPosition: 'top' }}
+            />
+          </ImgWrapper>
+        </ImgCol>
+      </ContentGrid>
     </PageWrapper>
   )
 }
