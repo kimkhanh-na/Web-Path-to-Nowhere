@@ -99,7 +99,7 @@ const CreatorDesc = styled.p`
 
 const ProfileImgWrapper = styled.div`
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 4/3;
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -163,8 +163,8 @@ export default function CreatorPage() {
 
           <ProfileImgWrapper>
             <Image
-              src="/image/Hella.png"
-              alt="Lê Kim Khánh"
+              src="/image/Creator.png"
+              alt="Creator"
               fill
               sizes="(max-width:600px) 100vw, 50vw"
               style={{ objectFit: 'contain', objectPosition: 'center' }}

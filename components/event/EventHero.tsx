@@ -57,6 +57,7 @@ export default function EventHero() {
           <Image src="/image/Event.png" 
               alt="Silent Snow Hidden Plum" 
               fill 
+              loading='eager'
               sizes='100vw'
               priority
               style={{ objectFit: 'cover' }} />
