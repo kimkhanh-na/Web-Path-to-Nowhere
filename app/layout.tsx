@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Providers from '@/components/Providers'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
   title: 'LeKimKhanh – Path to Nowhere Fansite',
@@ -26,6 +27,8 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+
+          <SpeedInsights/>
         </Providers>
       </body>
     </html>
